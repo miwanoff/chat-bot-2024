@@ -24,3 +24,12 @@ form#form_chatbox input {
 .show {
     left: calc(100% - 220px) !important;
 }
+
+.human_answ{
+    background-color: #a0d2fa;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    width: 120px;
+    height: auto;
+}

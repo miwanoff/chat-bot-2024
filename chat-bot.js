@@ -26,6 +26,24 @@ $("#question").click(function () {
 });
 
 $("#ok").click(function () {
-    return false;
-  });
-  
+  let q = $("#question").val().trim();
+  $("#question").val("");
+  //console.log(q);
+  if (q !== "") {
+    $("#answers").append(`<div class="human_answ">${q}</div>`);
+    setTimeout(function () {
+      if (q.toLowerCase().includes("bye")) {
+        $("#answers").append(`<div class="bot_answ">${goodbye}</div>`);
+      } else {
+        $("#answers").append(`<div class="bot_answ">${hello}</div>`);
+      }
+
+      let chatbot = document.getElementById("chatbot");
+      $("#chatbot").animate(
+        { scrollTop: chatbot.scrollHeight - chatbot.clientHeight },
+        100
+      );
+    }, 1000);
+  }
+  return false;
+});
